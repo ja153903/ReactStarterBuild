@@ -9,13 +9,13 @@ module.exports = {
     path: path.join(__dirname, 'www'),
     filename: 'bundle.js'
   },
-  modules: {
+  module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: [
-          'babel_loader',
+          'babel-loader',
         ],
       },
     ],
