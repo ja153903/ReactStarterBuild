@@ -19,6 +19,10 @@ app.use(webpackDevMiddlware(compiler, {
   historyApiFallback: true,
 }));
 
+app.use('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname + '/www/index.html'));
+});
+
 const server = app.listen(3000, () => {
   const host = server.address().address;
   const port = server.address().port;
