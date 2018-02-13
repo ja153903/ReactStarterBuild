@@ -1,10 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  context: path.join(__dirname, 'src'),
-  entry: [
-    './main.js',
-  ],
+  entry: `./src/main.js`,
   output: {
     path: path.join(__dirname, 'www'),
     filename: 'bundle.js'
@@ -19,7 +16,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.css$/,
+        test: /\.s?css$/,
         use: ['style-loader', 'css-loader']
       }
     ],
@@ -30,7 +27,6 @@ module.exports = {
     ],
   },
   devServer: {
-    historyApiFallback: true,
-    contentBase: './'
-  }
+    contentBase: `${__dirname}/www`
+}
 };
